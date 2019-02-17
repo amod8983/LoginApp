@@ -1,0 +1,37 @@
+<%- include('../views/layout/head.ejs') %>
+<div class="row">
+    <div class="col-md-7 col-md-offset-1">
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIvJd3uyogQm2PnmgamXC0iS5D6QL6J65YKfK8-EJT_FfD3N3"
+                        id="icon" alt="User Icon" style="height:60px;width:60px" />
+                </div>
+
+                <!-- Login Form -->
+                <form action="/user/reset" method="POST">
+                    <input type="text" id="password" class="fadeIn third" name="username" placeholder="username">
+                    <input type="text" id="login" class="fadeIn second" name="name" placeholder="name">
+                    <input type="password" id="password" class="fadeIn third" name="password" placeholder="new password">
+                    <input type="password" id="login" class="fadeIn second" name="cpassword" placeholder="confirm password">
+                    <input type="submit" class="fadeIn fourth" value="Reset">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="margin-top:80px">
+        <% if(errormsg){ %>
+        <% for(let error of errormsg){ %>
+        <div class="alert alert-danger">
+            <%= error.msg %>
+        </div>
+        <% } %>
+        <% } %>
+    </div>
+</div>
+
+<%- include('../views/layout/foot.ejs') %>
